@@ -1,11 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\forms",
-    "\\forms\\src",
-    "\\primer\\src",
-    "\\todo\\src"
+    "\\empleado",
+    "\\empleado\\src"
   ],
-  "SelectedNode": "\\forms\\src\\Display.js",
+  "SelectedNode": "\\empleado\\src\\App.js",
   "PreviewInSolutionExplorer": false
 }

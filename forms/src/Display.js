@@ -5,6 +5,7 @@ export class Display extends Component {
     formatValue = (data) => Array.isArray(data) ? data.join(", ") :
         data.toString();
 
+
     render() {
         let keys = Object.keys(this.props.data);
         if (keys.length === 0) {
@@ -22,10 +23,15 @@ export class Display extends Component {
                     </div>
                 )
 
-
-
                 }
             </div>
         }
     }
 }
+
+//Object.keys: un array con elementos string
+//correspondiendo a las propiedades enumerables
+//que se encuentran en Object
+
+//var arr=['a','b','c'];
+//console.log(Object.keys(arr))--> ['0','1','2']
