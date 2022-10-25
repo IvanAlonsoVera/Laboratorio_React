@@ -7,6 +7,12 @@ export class Editor extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            default: [
+                { title: "Agile", seatCapacity: 20, instructorName: "Jonh Jones" },
+                { title: "C#", seatCapacity: 15, instructorName: "Jonh Jones" },
+                { title: "Angular", seatCapacity: 13, instructorName: "Ross Miller" },
+                { title: "Java", seatCapacity: 10, instructorName: "Alex Walker" }
+            ],
             title: "",
             seatCapacity: "",
             instructorName: ""
@@ -49,8 +55,8 @@ export class Editor extends Component {
                     </div>
                 </FormValidator>
               </div>
-            <div className="col-6">
-                    <Display title={this.state.title} seatCapacity={this.state.seatCapacity} instructorName={this.state.instructorName} />  
+                <div className="col-6">
+                    <Display default={this.state.default} title={this.state.title} seatCapacity={this.state.seatCapacity} instructorName={this.state.instructorName} />  
             </div>
                 
             </>

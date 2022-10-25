@@ -16,6 +16,13 @@ export class Display extends Component {
                 <tbody>
 
                 </tbody>
+                    {this.props.default.map(() =>
+                        <tr>
+                            <td>{this.props.default.title}</td>
+                            <td>{this.props.default.seatCapacity}</td>
+                            <td>{this.props.default.instructorName}</td>
+                        </tr> 
+                    )}
                     <tr>
                         <td>{this.props.title}</td>
                         <td>{this.props.seatCapacity}</td>
