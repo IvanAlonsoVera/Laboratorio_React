@@ -14,7 +14,16 @@ export class FormValidator extends Component {
         }
     }
 
-    static getDerivedStateFromProps(props) {
+    static getDerivedStateFromProps(props, state) {
+        state.errors = ValidateData(props.data, props.rules);
+        if (state.formSubmitted && Object.keys(state.errors).length === 0) {
+            let formErrors = props.validateForm(props.data);
+            if (formErrors.length > 0) {
+                state.errors.form = formErrors;
+            }
+            return state;
+        }
+
         return {
             errors: ValidateData(props.data, props.rules)
         };
@@ -31,7 +40,12 @@ export class FormValidator extends Component {
     handleClick = () => {
         this.setState({ formSubmitted: true }, () => {
             if (this.formValid) {
-                this.props.submit(this.props.data)
+                let formsErrors = this.props.validateForm(this.props.data);
+                if (formsErrors.length === 0) {
+                    this.props.submit(this.props.data)
+                }
+
+                
             }
         });
     }

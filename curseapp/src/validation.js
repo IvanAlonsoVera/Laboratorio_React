@@ -23,6 +23,9 @@ export function ValidateData(data, rules) {
                     if (rules[field].alpha && !validator.isAlpha(val)) {
                         fielderrors.push("Enter only letters");
                     }
+                    if (rules[field].numeric && !validator.isNumeric(val)) {
+                        fielderrors.push("Enter only numbers");
+                    }
                     if (rules[field].email && !validator.isEmail(val)) {
                         fielderrors.push("Enter a valid email address");
                     }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Editor } from "./Editor";
-import { Display } from "./Display";
 
 
 export default class App extends Component {

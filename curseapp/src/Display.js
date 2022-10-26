@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export class Display extends Component {
 
     render() {
-        let keys = Object.keys(this.props.title);
+        let keys = Object.keys(this.props.curse);
         if (keys.length === 0) {
             return <div className="h5 bg-secondary p-2 text-white">
                 No data
@@ -16,11 +16,11 @@ export class Display extends Component {
                 <tbody>
 
                 </tbody>
-                    {this.props.default.map(() =>
+                    {this.props.curse.map((curse) =>
                         <tr>
-                            <td>{this.props.default.title}</td>
-                            <td>{this.props.default.seatCapacity}</td>
-                            <td>{this.props.default.instructorName}</td>
+                            <td>{curse.title}</td>
+                            <td>{curse.seatCapacity}</td>
+                            <td>{curse.instructorName}</td>
                         </tr> 
                     )}
                     <tr>
