@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { FormValidator } from "./FormValidator";
 import { ValidationMessage } from "./ValidationMessage";
 import { Display } from "./Display";
+import { AddRow } from "./AddRow";
 
 export class Editor extends Component {
     constructor(props) {
@@ -14,6 +15,7 @@ export class Editor extends Component {
                 { title: "Java", seatCapacity: 10, instructorName: "Alex Walker" }
             ]
         }
+        this.nCurse = {};
         this.rules = {
             title: { required: true, minlength: 5, alpha: true },
             seatCapacity: { required: true, numeric: true }
@@ -21,9 +23,10 @@ export class Editor extends Component {
     }
     updateFormValue = (event) => {
         this.setState({ [event.target.name]: event.target.value });
+        this.nCurse[event.target.name] = event.target.value;
     }
-    addRow = (c.newCurse => {
-        this.setState({...curse, });
+    addCurse = () => this.setState({
+        curse: [...this.state.curse, this.nCurse]
     })
 
     render() {
@@ -35,30 +38,30 @@ export class Editor extends Component {
                         <label>Title:</label>
                         <input className="form-control"
                             name="title"
-                            value={this.state.newCurse.title}
+                            value={this.state.curse.title}
                             onChange={this.updateFormValue} />
                         <ValidationMessage field="title" />
                     </div>
                     <div className="form-group">
                         <label>Seat Capacity:</label>
                         <input className="form-control"
-                            name="seatCapacity"
-                                value={this.state.newCurse.seatCapacity}
+                                name="seatCapacity"
+                                value={this.state.curse.seatCapacity}
                             onChange={this.updateFormValue} />
                         <ValidationMessage field="seatCapacity" />
                     </div>
                     <div className="form-group mb-2">
                         <label>Instructor Name:</label>
                         <textarea className="form-control" name="instructorName"
-                                value={this.state.newCurse.instructorName}
+                                value={this.state.curse.instructorName}
                             onChange={this.updateFormValue} />
                         <ValidationMessage field="instructorName" />
                     </div>
                     </FormValidator>
-                    <button className="btn btn-primary" onClick={this.addRow}>Add Colum</button>
+                    <button onClick={this.addCurse} className="btn btn-primary">Dale</button>
               </div>
                 <div className="col-6">
-                    <Display curse={this.state.curse} title={this.state.newCurse.title} seatCapacity={this.state.newCurse.seatCapacity} instructorName={this.state.newCurse.instructorName} />  
+                    <Display curse={this.state.curse} />  
             </div>
                 
             </>

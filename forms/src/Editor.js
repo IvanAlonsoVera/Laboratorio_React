@@ -23,14 +23,16 @@ export class Editor extends Component {
     render() {
         return (
             <div className="h5 bg-info text-white p-2">
-                <FormValidator ValidateForm={ValidateForm} data={this.state} rules={this.rules} submit={this.props.submit}>
+                <FormValidator data={this.state} rules={this.rules}
+                    submit={this.props.submit} validateForm={ValidateForm}>
+                    <ValidationMessage field="form" />
                     <div className="form-group">
                         <label>Name:</label>
                         <input className="form-control"
                             name="name"
                             value={this.state.name}
                             onChange={this.updateFormValue} />
-                        <ValidationMessage field="form" />
+                        <ValidationMessage field="name" />
                     </div>
                     <div className="form-group">
                         <label>Email:</label>
@@ -52,3 +54,4 @@ export class Editor extends Component {
         )
     }
 }
+

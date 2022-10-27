@@ -14,7 +14,6 @@ export class Display extends Component {
                     <tr><th>Title</th><th>Seat Capacity</th><th>Instructor Name</th></tr>
                 </thead>
                 <tbody>
-
                 </tbody>
                     {this.props.curse.map((curse) =>
                         <tr>
@@ -23,11 +22,6 @@ export class Display extends Component {
                             <td>{curse.instructorName}</td>
                         </tr> 
                     )}
-                    <tr>
-                        <td>{this.props.title}</td>
-                        <td>{this.props.seatCapacity}</td>
-                        <td>{this.props.instructorName}</td>
-                    </tr> 
             </table>
         }
     }

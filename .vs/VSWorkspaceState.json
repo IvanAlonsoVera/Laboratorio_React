@@ -1,10 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\productapp",
+    "\\biblio\\src",
+    "\\curseapp\\src",
+    "\\empleado\\src",
+    "\\forms\\src",
+    "\\nCurse",
+    "\\nCurse\\src",
     "\\productapp\\src",
-    "\\productapp\\src\\store"
+    "\\todo\\src"
   ],
-  "SelectedNode": "\\productapp\\src\\App.js",
+  "SelectedNode": "\\nCurse\\src\\ValidationMessage.js",
   "PreviewInSolutionExplorer": false
 }
