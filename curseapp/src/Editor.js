@@ -12,11 +12,7 @@ export class Editor extends Component {
                 { title: "C#", seatCapacity: 15, instructorName: "Jonh Jones" },
                 { title: "Angular", seatCapacity: 13, instructorName: "Ross Miller" },
                 { title: "Java", seatCapacity: 10, instructorName: "Alex Walker" }
-            ],
-            newCurse: [
-                { title: "", seatCapacity: 0, instructorName: "" } 
             ]
-            
         }
         this.rules = {
             title: { required: true, minlength: 5, alpha: true },
@@ -26,11 +22,14 @@ export class Editor extends Component {
     updateFormValue = (event) => {
         this.setState({ [event.target.name]: event.target.value });
     }
+    addRow = (c.newCurse => {
+        this.setState({...curse, });
+    })
 
     render() {
         return (
             <>
-                <div className="col-6 h5 bg-info text-white p-2">
+                <div className="text-center col-6 h5 bg-info text-white p-2">
                     <FormValidator data={this.state} rules={this.rules} submit={this.props.submit}>
                     <div className="form-group">
                         <label>Title:</label>
@@ -48,14 +47,15 @@ export class Editor extends Component {
                             onChange={this.updateFormValue} />
                         <ValidationMessage field="seatCapacity" />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group mb-2">
                         <label>Instructor Name:</label>
                         <textarea className="form-control" name="instructorName"
                                 value={this.state.newCurse.instructorName}
                             onChange={this.updateFormValue} />
                         <ValidationMessage field="instructorName" />
                     </div>
-                </FormValidator>
+                    </FormValidator>
+                    <button className="btn btn-primary" onClick={this.addRow}>Add Colum</button>
               </div>
                 <div className="col-6">
                     <Display curse={this.state.curse} title={this.state.newCurse.title} seatCapacity={this.state.newCurse.seatCapacity} instructorName={this.state.newCurse.instructorName} />  

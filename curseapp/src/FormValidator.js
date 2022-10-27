@@ -53,14 +53,6 @@ export class FormValidator extends Component {
                     {this.props.children}
                 </div>
             </ValidationContext.Provider>
-
-            <div className="text-center">
-                <button className={`btn ${this.getButtonClasses()}`}
-                    onClick={this.handleClick}
-                    disabled={this.state.formSubmitted && !this.formValid} >
-                    Submit
-                </button>
-            </div>
         </React.Fragment>
     }
 }

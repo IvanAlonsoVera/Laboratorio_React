@@ -1,11 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\forms\\src",
-    "\\primer\\src",
     "\\productapp",
-    "\\productapp\\src"
+    "\\productapp\\src",
+    "\\productapp\\src\\store"
   ],
-  "SelectedNode": "\\productapp\\src\\supplierTableRow.js",
+  "SelectedNode": "\\productapp\\src\\App.js",
   "PreviewInSolutionExplorer": false
 }
